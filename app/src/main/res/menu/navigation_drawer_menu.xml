@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dice_roller"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="dice_roller"/>
+        <item
+            android:id="@+id/nav_themes"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="themes"/>
+
+        <item
+            android:id="@+id/nav_donations"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="donations"/>
+
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="statistics"/>
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="settings"/>
+
+    </group>
+
+</menu>
