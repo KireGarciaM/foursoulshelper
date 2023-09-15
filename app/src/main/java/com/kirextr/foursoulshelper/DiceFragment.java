@@ -1,12 +1,21 @@
 package com.kirextr.foursoulshelper;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +23,16 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class DiceFragment extends Fragment {
+    /*int delay_time = 20;
+    int roll_animations = 40;
+    int[] dice_images = new int[]{R.drawable.d1, R.drawable.d2, R.drawable.d3,
+            R.drawable.d4, R.drawable.d5, R.drawable.d6};
+    Random random = new Random();
+    TextView tv_help;
+    ImageView die1;
+    ImageView die2;
+    LinearLayout dice_container;
+    MediaPlayer mp;*/
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,11 +68,50 @@ public class DiceFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        Intent intent = new Intent(getActivity(), dice_activity.class);
+        startActivity(intent);
+        //setContentView(R.layout.fragment_dice);
+        //tv_help = findViewById(R.id.tvHelp);
+        //dice_container = findViewById(R.id.diceContainer);
+        //die1 = findViewById(R.id.die1);
+        //die2 = findViewById(R.id.die2);
+        //mp = MediaPlayer.create(this,R.raw.roll);
+        /*dice_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    rollDice();
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+*/
     }
+
+    /*private void rollDice() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < roll_animations; i++){
+                    int dice1 = random.nextInt(6)+1;
+                    int dice2 = random.nextInt(6)+1;
+                    die1.setImageResource(dice_images[dice1 - 1]);
+                    die2.setImageResource(dice_images[dice2 - 1]);
+                    try{
+                        Thread.sleep(delay_time);
+                    }catch(InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+        if(mp != null){
+            mp.start();
+        }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
